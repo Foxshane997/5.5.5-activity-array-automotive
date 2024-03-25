@@ -7,7 +7,8 @@ console.log(v.make)
 
 class Car extends VehicleModule {
     constructor(make, model, year, color, mileage){
-        this.maximumPassengers = 5; 
+        super(make, model, year, color, mileage)
+        this.maximumPassengers = 6; 
         this.passengers = 0;
         this.numberOfWheels = 4; 
         this.maximumSpeed = 160;
@@ -15,16 +16,50 @@ class Car extends VehicleModule {
         this.scheduleService = false;
     }
 }
-//After you write the derived Car class, you should test it out.
 
-//Note: You can code your derived Car class here or make a file named index.js and do it there.
+    loadPassengers(num)
+        if(this.passengers < this.maximumPassengers){
+            if ((num + this.passengers) <= this.maximumPassengers){  /*Need to reference the solution for this. */
+                this.passengers = num;                               /*It was tricky and a litle hard to wrap my head around tbh. */
+                return this.passengers;
+            } 
+            else{
+                console.log(this.model + " " + this.make + "is at capacity");
+            }
+        }
+    
+
+    start()
+        if(this.fuel > 0){
+            console.log("The engine has started!")
+            return this.started = true;     
+        }                                   /*I referenced veicleBaseClass.js here for the this.start I believe that was required  */
+        else{
+            console.log("Gas tank is empty!")
+            return this.started = false;
+        }
+    
+
+    checkService() 
+        if(this.mileage > 25000){
+            this.scheduleService = true
+            return this.scheduleService;
+        }
+
+    
+
 
 
 //TO DO: Code the Car subclass here or in index.js file, i.e. class Car extends Vehicle ...
 
+let myCar = new Car('mercury', 'Suped-sedan', '2005', 'black', 50000)
 
+myCar.start()
+myCar.loadPassenger(6)
+myCar.stop()
+myCar.checkService()
 
-
+console.log(myCar)
 
 
 

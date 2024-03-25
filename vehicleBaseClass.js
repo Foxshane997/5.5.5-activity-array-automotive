@@ -7,7 +7,7 @@ class Vehicle {
         this.passenger = 0;
         this.speed = 0;
         this.mileage = mileage;
-        this.started = false;
+        this.started = false;   /*This is what I referenced here */
         this.numberOfWheels = 0;
     }
 
