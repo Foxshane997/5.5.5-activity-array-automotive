@@ -1,4 +1,4 @@
-const VehicleModule = require('./vehicle').Vehicle
+const VehicleModule = require('./vehicleBaseClass').Vehicle
 
 class Car extends VehicleModule {
     constructor(make, model, year, color, mileage) {
